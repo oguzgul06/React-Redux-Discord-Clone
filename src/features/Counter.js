@@ -7,7 +7,7 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from './counterSlice';
+} from '../app/features/counterSlice';
 import styles from './Counter.css';
 
 export function Counter() {
