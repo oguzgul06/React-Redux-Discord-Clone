@@ -1,4 +1,4 @@
-import React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
 import Sidebar from "./components/Sidebar";
@@ -6,7 +6,7 @@ import Chat from "./components/Chat";
 import { selectUser } from "./features/userSlice";
 import Login from "./components/Login";
 import { auth } from "./firebase";
-import {login, logout} from "./features/userSlice"
+import { login, logout } from "./features/userSlice";
 
 function App() {
   const dispatch = useDispatch();
@@ -15,12 +15,14 @@ function App() {
   useEffect(() => {
     auth.onAuthStateChanged((authUser) => {
       if (authUser) {
-        dispatch(login({
-          uid: authUser.uid,
-          photo: authUser.photoURL,
-          email: authUser.email,
-          displayName: authUser.displayName,
-        }))
+        dispatch(
+          login({
+            uid: authUser.uid,
+            photo: authUser.photoURL,
+            email: authUser.email,
+            displayName: authUser.displayName,
+          })
+        );
       } else {
         dispatch(logout());
       }
@@ -31,10 +33,8 @@ function App() {
     <div className="app">
       {user ? (
         <>
-          {/* Sidebar */}
           <Sidebar />
 
-          {/* Chat */}
           <Chat />
         </>
       ) : (

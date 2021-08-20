@@ -7,7 +7,7 @@ const firebaseConfig = {
   storageBucket: "discord-clone-redux-96ae2.appspot.com",
   messagingSenderId: "169627166634",
   appId: "1:169627166634:web:f39c673f74d0dbb26a6dd3",
-  measurementId: "G-QW35WDZZQC",
+  measurementId: "G-QW35WDZZQC"
 };
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
