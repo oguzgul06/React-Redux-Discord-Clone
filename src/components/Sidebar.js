@@ -12,7 +12,7 @@ import HeadsetIcon from "@material-ui/icons/Headset";
 import SettingsIcon from "@material-ui/icons/Settings";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
-import { db, auth } from "../firebase";
+import db,{ auth } from "../firebase";
 
 function Sidebar() {
   const user = useSelector(selectUser);
