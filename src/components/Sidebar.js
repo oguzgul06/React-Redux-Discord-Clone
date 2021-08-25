@@ -10,6 +10,7 @@ import { Avatar } from "@material-ui/core";
 import MicIcon from "@material-ui/icons/Mic";
 import HeadsetIcon from "@material-ui/icons/Headset";
 import SettingsIcon from "@material-ui/icons/Settings";
+import ExitToAppIcon from "@material-ui/icons/ExitToApp";
 import { useSelector } from "react-redux";
 import { selectUser } from "../features/userSlice";
 import db,{ auth } from "../firebase";
@@ -93,6 +94,7 @@ function Sidebar() {
           <MicIcon />
           <HeadsetIcon />
           <SettingsIcon />
+          <ExitToAppIcon onClick={() => auth.signOut()} className="exit" />
         </div>
       </div>
     </div>

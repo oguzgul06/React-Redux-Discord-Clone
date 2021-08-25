@@ -86,3 +86,11 @@
 .sidebar__profileIcons > .MuıSvgIcon--root {
   padding: 10px;
 }
+
+.exit {
+  margin-left: 20px;
+}
+
+.exit:hover {
+  color: red !important;
+}
