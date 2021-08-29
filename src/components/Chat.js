@@ -7,27 +7,27 @@ import GifIcon from "@material-ui/icons/Gif";
 import EmojiEmotionsIcon from "@material-ui/icons/EmojiEmotions";
 import Message from "./subcomponents/Message";
 import { useSelector } from "react-redux";
-import { selectChannelName, selectChanngelId } from "../features/appSlice";
+import { selectChannelName, selectChannelId } from "../features/appSlice";
 import { selectUser } from "../features/userSlice";
 import db from "../firebase";
 import firebase from "firebase";
 
 function Chat() {
-  const channelId = useSelector(selectChanngelId);
+  const channelId = useSelector(selectChannelId);
   const user = useSelector(selectUser);
   const channelName = useSelector(selectChannelName);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
 
   useEffect(() => {
-    if (channelId){
+    if (channelId) {
       db.collection("channels")
-      .doc(channelId)
-      .collection("messages")
-      .orderBy("timestamp", "desc")
-      .onSnapshot((snapshot) =>
-        setMessages(snapshot.docs.map((doc) => doc.data()))
-      );
+        .doc(channelId)
+        .collection("messages")
+        .orderBy("timestamp", "desc")
+        .onSnapshot((snapshot) =>
+          setMessages(snapshot.docs.map((doc) => doc.data()))
+        );
     }
   }, [channelId]);
 
@@ -59,12 +59,12 @@ function Chat() {
 
       <div className="chat__input">
         <AddCircleIcon fontSize="large" />
-        <form>
+        <form action="">
           <input
             value={input}
             disabled={!channelId}
             onChange={(e) => setInput(e.target.value)}
-            placeholder={`Message #${channelName}`}
+            placeholder={`Messagge #${channelName}`}
           />
           <button
             disabled={!channelId}

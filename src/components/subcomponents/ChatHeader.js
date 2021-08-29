@@ -12,24 +12,20 @@ function ChatHeader({ channelName }) {
     <div className="chatHeader">
       <div className="chatHeader__left">
         <h3>
-          <span className="chatHeader__hash">#</span>
-          {channelName}
+          <span className="chatHeader__hash">#</span> {channelName}
         </h3>
       </div>
-
       <div className="chatHeader__right">
         <NotificationsIcon />
         <EditLocationRoundedIcon />
         <PeopleAltRoundedIcon />
+        <div className="chatHeader__search">
+          <input placeholder="search" />
+          <SearchRoundedIcon />
+        </div>
+        <SendRoundedIcon />
+        <HelpRoundedIcon />
       </div>
-
-      <div className="chatHeader__search">
-        <input placeholder="Search" />
-        <SearchRoundedIcon />
-      </div>
-
-      <SendRoundedIcon />
-      <HelpRoundedIcon />
     </div>
   );
 }
